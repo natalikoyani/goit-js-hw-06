@@ -9,9 +9,11 @@ const ingredients = [
 
 const ul = document.getElementById('ingredients')
 
-for (const ingredient of ingredients) {
+const newIngredients = ingredients.map(ingredient => {
   const li = document.createElement('li')
   li.textContent = ingredient
   li.classList.add('item')
-  ul.appendChild(li)
-}
+  return li
+})
+
+ul.append(...newIngredients)
